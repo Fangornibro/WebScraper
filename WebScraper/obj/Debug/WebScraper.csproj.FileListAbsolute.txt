@@ -13,3 +13,15 @@ C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\obj\Debug\WebScraper.csproj
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\obj\Debug\WebScraper.csproj.CopyComplete
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\obj\Debug\WebScraper.exe
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\obj\Debug\WebScraper.pdb
+C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\MySql.Data.dll
+C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\Google.Protobuf.dll
+C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\ZstdNet.dll
+C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\System.Memory.dll
+C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\System.Buffers.dll
+C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\MySql.Data.xml
+C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\obj\Debug\WebScraper.exe.config
