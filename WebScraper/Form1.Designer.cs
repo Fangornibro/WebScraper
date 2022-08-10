@@ -1,6 +1,6 @@
 ﻿namespace WebScraper
 {
-    partial class Form1
+    partial class WebScraper
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,23 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.scrapButton = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.mainTable = new System.Windows.Forms.DataGridView();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.allDatabasesTabControl = new System.Windows.Forms.TabControl();
+            this.reloadButton = new System.Windows.Forms.Button();
+            this.categoryCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.scrapTextBox = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.mainTable)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.allDatabasesTabControl.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // scrapButton
             // 
-            this.button1.Location = new System.Drawing.Point(12, 639);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Scrap";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.scrapButton.Location = new System.Drawing.Point(137, 613);
+            this.scrapButton.Name = "scrapButton";
+            this.scrapButton.Size = new System.Drawing.Size(75, 23);
+            this.scrapButton.TabIndex = 0;
+            this.scrapButton.Text = "Scrap";
+            this.scrapButton.UseVisualStyleBackColor = true;
+            this.scrapButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // tabPage1
             // 
@@ -65,38 +69,91 @@
             this.mainTable.Size = new System.Drawing.Size(781, 500);
             this.mainTable.TabIndex = 1;
             // 
-            // tabControl1
+            // allDatabasesTabControl
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(1, 2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(942, 20);
-            this.tabControl1.TabIndex = 2;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.allDatabasesTabControl.Controls.Add(this.tabPage1);
+            this.allDatabasesTabControl.Location = new System.Drawing.Point(1, 2);
+            this.allDatabasesTabControl.Name = "allDatabasesTabControl";
+            this.allDatabasesTabControl.SelectedIndex = 0;
+            this.allDatabasesTabControl.Size = new System.Drawing.Size(942, 20);
+            this.allDatabasesTabControl.TabIndex = 2;
+            this.allDatabasesTabControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.allDatabasesTabControl_MouseUp);
             // 
-            // Form1
+            // reloadButton
+            // 
+            this.reloadButton.BackgroundImage = global::WebScraper.Properties.Resources.ReloadIcon1;
+            this.reloadButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.reloadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reloadButton.Location = new System.Drawing.Point(778, 52);
+            this.reloadButton.Name = "reloadButton";
+            this.reloadButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.reloadButton.Size = new System.Drawing.Size(34, 34);
+            this.reloadButton.TabIndex = 3;
+            this.reloadButton.UseVisualStyleBackColor = true;
+            this.reloadButton.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // categoryCheckedListBox
+            // 
+            this.categoryCheckedListBox.BackColor = System.Drawing.SystemColors.Control;
+            this.categoryCheckedListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.categoryCheckedListBox.CheckOnClick = true;
+            this.categoryCheckedListBox.FormattingEnabled = true;
+            this.categoryCheckedListBox.Location = new System.Drawing.Point(827, 115);
+            this.categoryCheckedListBox.Name = "categoryCheckedListBox";
+            this.categoryCheckedListBox.Size = new System.Drawing.Size(227, 480);
+            this.categoryCheckedListBox.TabIndex = 4;
+            this.categoryCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.categoryCheckedListBox_SelectedIndexChanged);
+            // 
+            // scrapTextBox
+            // 
+            this.scrapTextBox.Location = new System.Drawing.Point(31, 613);
+            this.scrapTextBox.Name = "scrapTextBox";
+            this.scrapTextBox.Size = new System.Drawing.Size(100, 20);
+            this.scrapTextBox.TabIndex = 5;
+            this.scrapTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.scrapTextBox_KeyPress);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(818, 92);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(37, 17);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "All";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseUp);
+            // 
+            // WebScraper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 674);
+            this.ClientSize = new System.Drawing.Size(1081, 674);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.scrapTextBox);
+            this.Controls.Add(this.categoryCheckedListBox);
+            this.Controls.Add(this.reloadButton);
             this.Controls.Add(this.mainTable);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.allDatabasesTabControl);
+            this.Controls.Add(this.scrapButton);
+            this.Name = "WebScraper";
+            this.Text = "WebScraper";
             ((System.ComponentModel.ISupportInitialize)(this.mainTable)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.allDatabasesTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button scrapButton;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView mainTable;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl allDatabasesTabControl;
+        private System.Windows.Forms.Button reloadButton;
+        private System.Windows.Forms.CheckedListBox categoryCheckedListBox;
+        private System.Windows.Forms.TextBox scrapTextBox;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

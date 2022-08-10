@@ -6,7 +6,6 @@ C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\HtmlAgilityPack.p
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\HtmlAgilityPack.xml
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\obj\Debug\WebScraper.csproj.AssemblyReference.cache
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\obj\Debug\WebScraper.csproj.SuggestedBindingRedirects.cache
-C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\obj\Debug\WebScraper.Form1.resources
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\obj\Debug\WebScraper.Properties.Resources.resources
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\obj\Debug\WebScraper.csproj.GenerateResource.cache
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\obj\Debug\WebScraper.csproj.CoreCompileInputs.cache
@@ -25,3 +24,4 @@ C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\K4os.Compression.
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\MySql.Data.xml
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\obj\Debug\WebScraper.exe.config
+C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\obj\Debug\WebScraper.WebScraper.resources
