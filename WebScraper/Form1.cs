@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HtmlAgilityPack;
@@ -19,9 +20,22 @@ namespace WebScraper
         {
             InitializeComponent(); 
             List<string> brands = GetBrands("https://bt.rozetka.com.ua/ua/grills/c81235/");
+            List<string> TableNames = GetTables();
+            int i = 0;
             foreach (string brand in brands)
             {
-                categoryCheckedListBox.Items.Add(brand);
+                DB db = new DB();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                MySqlCommand cmd = new MySqlCommand("SELECT Brand, COUNT(*) FROM `" + TableNames[allDatabasesTabControl.SelectedIndex] + "` GROUP BY Brand", db.getConnection());
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                if (i < dt.Rows.Count)
+                {
+                    var rowAsString = string.Join(", ", dt.Rows[i].ItemArray);
+                    categoryCheckedListBox.Items.Add(rowAsString);
+                }
+                i++;
             }
             tabControlUpdate();
         }
@@ -32,22 +46,18 @@ namespace WebScraper
 
             string allColumns = "";
             bool isFirst = true;
-            if (checkBox1.Checked)
-            {
-                
-            }
-            else
+            if (!checkBox1.Checked)
             {
                 foreach (string s in categoryCheckedListBox.CheckedItems)
                 {
                     if (isFirst)
                     {
-                        allColumns += "WHERE Brand = '" + s + "'";
+                        allColumns += "WHERE Brand = '" + Regex.Replace(s, "[0-9, \\,]{1,}", "") + "'";
                         isFirst = false;
                     }
                     else
                     {
-                        allColumns += " OR Brand = '" + s + "'";
+                        allColumns += " OR Brand = '" + Regex.Replace(s, "[0-9, \\,]{1,}", "") + "'";
                     }
                 }
             }
