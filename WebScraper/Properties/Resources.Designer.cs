@@ -63,9 +63,9 @@ namespace WebScraper.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ReloadIcon {
+        internal static System.Drawing.Bitmap ReloadIcon1 {
             get {
-                object obj = ResourceManager.GetObject("ReloadIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("ReloadIcon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace WebScraper.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ReloadIcon1 {
+        internal static System.Drawing.Bitmap TrashCanIcon {
             get {
-                object obj = ResourceManager.GetObject("ReloadIcon1", resourceCulture);
+                object obj = ResourceManager.GetObject("TrashCanIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

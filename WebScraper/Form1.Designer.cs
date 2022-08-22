@@ -30,19 +30,24 @@
         {
             this.scrapButton = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.mainTable = new System.Windows.Forms.DataGridView();
+            this.mainDataGridView = new System.Windows.Forms.DataGridView();
             this.allDatabasesTabControl = new System.Windows.Forms.TabControl();
-            this.reloadButton = new System.Windows.Forms.Button();
-            this.categoryCheckedListBox = new System.Windows.Forms.CheckedListBox();
-            this.scrapTextBox = new System.Windows.Forms.TextBox();
+            this.brandCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.mainTable)).BeginInit();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.button1 = new System.Windows.Forms.Button();
+            this.reloadButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.categoryCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             this.allDatabasesTabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // scrapButton
             // 
-            this.scrapButton.Location = new System.Drawing.Point(137, 613);
+            this.scrapButton.Location = new System.Drawing.Point(31, 609);
             this.scrapButton.Name = "scrapButton";
             this.scrapButton.Size = new System.Drawing.Size(75, 23);
             this.scrapButton.TabIndex = 0;
@@ -60,14 +65,14 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // mainTable
+            // mainDataGridView
             // 
-            this.mainTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.mainTable.Location = new System.Drawing.Point(31, 92);
-            this.mainTable.Name = "mainTable";
-            this.mainTable.RowHeadersVisible = false;
-            this.mainTable.Size = new System.Drawing.Size(781, 500);
-            this.mainTable.TabIndex = 1;
+            this.mainDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mainDataGridView.Location = new System.Drawing.Point(31, 92);
+            this.mainDataGridView.Name = "mainDataGridView";
+            this.mainDataGridView.RowHeadersVisible = false;
+            this.mainDataGridView.Size = new System.Drawing.Size(781, 500);
+            this.mainDataGridView.TabIndex = 1;
             // 
             // allDatabasesTabControl
             // 
@@ -78,6 +83,58 @@
             this.allDatabasesTabControl.Size = new System.Drawing.Size(942, 20);
             this.allDatabasesTabControl.TabIndex = 2;
             this.allDatabasesTabControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.allDatabasesTabControl_MouseUp);
+            // 
+            // brandCheckedListBox
+            // 
+            this.brandCheckedListBox.BackColor = System.Drawing.SystemColors.Control;
+            this.brandCheckedListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.brandCheckedListBox.CheckOnClick = true;
+            this.brandCheckedListBox.FormattingEnabled = true;
+            this.brandCheckedListBox.Location = new System.Drawing.Point(827, 115);
+            this.brandCheckedListBox.Name = "brandCheckedListBox";
+            this.brandCheckedListBox.Size = new System.Drawing.Size(227, 480);
+            this.brandCheckedListBox.TabIndex = 4;
+            this.brandCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.categoryCheckedListBox_SelectedIndexChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(818, 92);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(37, 17);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "All";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseUp);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(123, 609);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(583, 23);
+            this.progressBar1.TabIndex = 7;
+            this.progressBar1.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::WebScraper.Properties.Resources.TrashCanIcon;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.Location = new System.Drawing.Point(738, 52);
+            this.button1.Name = "button1";
+            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.button1.Size = new System.Drawing.Size(34, 34);
+            this.button1.TabIndex = 8;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // reloadButton
             // 
@@ -92,52 +149,59 @@
             this.reloadButton.UseVisualStyleBackColor = true;
             this.reloadButton.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(123, 635);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(583, 23);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "label1";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Visible = false;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(1058, 92);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(48, 17);
+            this.checkBox2.TabIndex = 11;
+            this.checkBox2.Text = "Grills";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.checkBox2_MouseUp);
+            // 
             // categoryCheckedListBox
             // 
             this.categoryCheckedListBox.BackColor = System.Drawing.SystemColors.Control;
             this.categoryCheckedListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.categoryCheckedListBox.CheckOnClick = true;
             this.categoryCheckedListBox.FormattingEnabled = true;
-            this.categoryCheckedListBox.Location = new System.Drawing.Point(827, 115);
+            this.categoryCheckedListBox.Location = new System.Drawing.Point(1067, 115);
             this.categoryCheckedListBox.Name = "categoryCheckedListBox";
             this.categoryCheckedListBox.Size = new System.Drawing.Size(227, 480);
-            this.categoryCheckedListBox.TabIndex = 4;
-            this.categoryCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.categoryCheckedListBox_SelectedIndexChanged);
-            // 
-            // scrapTextBox
-            // 
-            this.scrapTextBox.Location = new System.Drawing.Point(31, 613);
-            this.scrapTextBox.Name = "scrapTextBox";
-            this.scrapTextBox.Size = new System.Drawing.Size(100, 20);
-            this.scrapTextBox.TabIndex = 5;
-            this.scrapTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.scrapTextBox_KeyPress);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(818, 92);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(37, 17);
-            this.checkBox1.TabIndex = 6;
-            this.checkBox1.Text = "All";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseUp);
+            this.categoryCheckedListBox.TabIndex = 10;
+            this.categoryCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.categoryCheckedListBox_SelectedIndexChanged_1);
             // 
             // WebScraper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 674);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.scrapTextBox);
+            this.ClientSize = new System.Drawing.Size(1649, 674);
+            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.categoryCheckedListBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.brandCheckedListBox);
             this.Controls.Add(this.reloadButton);
-            this.Controls.Add(this.mainTable);
+            this.Controls.Add(this.mainDataGridView);
             this.Controls.Add(this.allDatabasesTabControl);
             this.Controls.Add(this.scrapButton);
             this.Name = "WebScraper";
             this.Text = "WebScraper";
-            ((System.ComponentModel.ISupportInitialize)(this.mainTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
             this.allDatabasesTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,12 +212,17 @@
 
         private System.Windows.Forms.Button scrapButton;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView mainTable;
+        private System.Windows.Forms.DataGridView mainDataGridView;
         private System.Windows.Forms.TabControl allDatabasesTabControl;
         private System.Windows.Forms.Button reloadButton;
-        private System.Windows.Forms.CheckedListBox categoryCheckedListBox;
-        private System.Windows.Forms.TextBox scrapTextBox;
+        private System.Windows.Forms.CheckedListBox brandCheckedListBox;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckedListBox categoryCheckedListBox;
     }
 }
 

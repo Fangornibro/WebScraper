@@ -90,10 +90,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ReloadIcon.jpg" />
+    <None Include="Resources\ReloadIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ReloadIcon.png" />
+    <None Include="Resources\TrashCanIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
