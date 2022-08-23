@@ -22,7 +22,7 @@ namespace WebScraper
         {
             InitializeComponent();
             TabControlUpdate(false);
-            BrandCategoryUpdate();
+            //BrandCategoryUpdate();
             DataGridUpdate();
 
         }
@@ -404,7 +404,7 @@ namespace WebScraper
                     product.ProductCondition = "Знято з виробництва";
                 }
                 //Category
-                HtmlNode cat = doc.DocumentNode.SelectSingleNode("(//dd[contains(@class, 'characteristics-full__value')]//a[contains(@class, 'ng-star-inserted')])[1]");
+                HtmlNode cat = doc.DocumentNode.SelectSingleNode("(//span[text()='Тип']/../..//a)[1]");
                 if (cat != null)
                 {
                     product.Category = cat.InnerText;

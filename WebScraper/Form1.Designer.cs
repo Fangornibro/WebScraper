@@ -41,8 +41,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.categoryCheckedListBox = new System.Windows.Forms.CheckedListBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             this.allDatabasesTabControl.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // scrapButton
@@ -60,7 +66,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(934, 0);
+            this.tabPage1.Size = new System.Drawing.Size(803, 0);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -80,7 +86,7 @@
             this.allDatabasesTabControl.Location = new System.Drawing.Point(1, 2);
             this.allDatabasesTabControl.Name = "allDatabasesTabControl";
             this.allDatabasesTabControl.SelectedIndex = 0;
-            this.allDatabasesTabControl.Size = new System.Drawing.Size(942, 20);
+            this.allDatabasesTabControl.Size = new System.Drawing.Size(811, 20);
             this.allDatabasesTabControl.TabIndex = 2;
             this.allDatabasesTabControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.allDatabasesTabControl_MouseUp);
             // 
@@ -90,7 +96,7 @@
             this.brandCheckedListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.brandCheckedListBox.CheckOnClick = true;
             this.brandCheckedListBox.FormattingEnabled = true;
-            this.brandCheckedListBox.Location = new System.Drawing.Point(827, 115);
+            this.brandCheckedListBox.Location = new System.Drawing.Point(12, 26);
             this.brandCheckedListBox.Name = "brandCheckedListBox";
             this.brandCheckedListBox.Size = new System.Drawing.Size(227, 480);
             this.brandCheckedListBox.TabIndex = 4;
@@ -99,7 +105,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(818, 92);
+            this.checkBox1.Location = new System.Drawing.Point(3, 3);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(37, 17);
             this.checkBox1.TabIndex = 6;
@@ -163,7 +169,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(1058, 92);
+            this.checkBox2.Location = new System.Drawing.Point(3, 3);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(48, 17);
             this.checkBox2.TabIndex = 11;
@@ -177,24 +183,54 @@
             this.categoryCheckedListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.categoryCheckedListBox.CheckOnClick = true;
             this.categoryCheckedListBox.FormattingEnabled = true;
-            this.categoryCheckedListBox.Location = new System.Drawing.Point(1067, 115);
+            this.categoryCheckedListBox.Location = new System.Drawing.Point(12, 26);
             this.categoryCheckedListBox.Name = "categoryCheckedListBox";
             this.categoryCheckedListBox.Size = new System.Drawing.Size(227, 480);
             this.categoryCheckedListBox.TabIndex = 10;
             this.categoryCheckedListBox.SelectedIndexChanged += new System.EventHandler(this.categoryCheckedListBox_SelectedIndexChanged_1);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(818, 92);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(277, 500);
+            this.tabControl1.TabIndex = 12;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.checkBox1);
+            this.tabPage2.Controls.Add(this.brandCheckedListBox);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(269, 584);
+            this.tabPage2.TabIndex = 0;
+            this.tabPage2.Text = "Brand";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.checkBox2);
+            this.tabPage3.Controls.Add(this.categoryCheckedListBox);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(269, 474);
+            this.tabPage3.TabIndex = 1;
+            this.tabPage3.Text = "Category";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // WebScraper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1649, 674);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.categoryCheckedListBox);
+            this.ClientSize = new System.Drawing.Size(1132, 674);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.brandCheckedListBox);
             this.Controls.Add(this.reloadButton);
             this.Controls.Add(this.mainDataGridView);
             this.Controls.Add(this.allDatabasesTabControl);
@@ -203,8 +239,12 @@
             this.Text = "WebScraper";
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
             this.allDatabasesTabControl.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -223,6 +263,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckedListBox categoryCheckedListBox;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
     }
 }
 
