@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WebScraper
 {
@@ -15,7 +16,14 @@ namespace WebScraper
         {
             if (connection.State == System.Data.ConnectionState.Closed)
             {
-                connection.Open();
+                try
+                {
+                    connection.Open();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
             }
         }
         public void closeConnection()
