@@ -63,6 +63,16 @@ namespace WebScraper.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CalendarIcon {
+            get {
+                object obj = ResourceManager.GetObject("CalendarIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ReloadIcon1 {
             get {
                 object obj = ResourceManager.GetObject("ReloadIcon1", resourceCulture);

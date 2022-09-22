@@ -18,7 +18,6 @@ C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\ZstdNet.dll
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\K4os.Compression.LZ4.Streams.dll
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\Ubiety.Dns.Core.dll
-C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\System.Memory.dll
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\System.Buffers.dll
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\K4os.Compression.LZ4.dll
 C:\Users\kuzmi\Desktop\Fangorn\WebScraper\WebScraper\bin\Debug\K4os.Hash.xxHash.dll
