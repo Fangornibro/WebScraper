@@ -2,24 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Security.Policy;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using HtmlAgilityPack;
 using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI.Relational;
-using System.Globalization;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
-using System.Runtime.InteropServices.ComTypes;
-using System.Reflection;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.Diagnostics;
 
 namespace WebScraper
 {
@@ -846,6 +832,7 @@ namespace WebScraper
 
         private void DataGridUpdateEvent(object sender, EventArgs e)
         {
+            BrandCategoryUpdate();
             DataGridUpdate();
         }
 
